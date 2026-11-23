@@ -1,16 +1,28 @@
+using Demo01Online.Models;
 using Microsoft.AspNetCore.Mvc;
-using MVC.Models;
 using System.Diagnostics;
 
-namespace MVC.Controllers
+namespace Demo01Online.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly ILogger<HomeController> _logger;
+
+        public HomeController(ILogger<HomeController> logger)
+        {
+            _logger = logger;
+        }
+
+
+        //BaseUrl/Home/Index
         public IActionResult Index()
         {
             return View();
         }
 
+        //BaseUrl/Home/Privacy
+
+      
         public IActionResult Privacy()
         {
             return View();
